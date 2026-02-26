@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ApiTestSuite">
+
+    <!--Smoke Tests -->
+    <test name="SmokeTests">
+        <classes>
+            <class name="test.api.smokeTests.AuthorizedNegativeUserTest"/>
+            <class name="test.api.smokeTests.AuthorizedPositiveUserTest"/>
+            <class name="test.api.smokeTests.GenerateTokenNegativeTest"/>
+            <class name="test.api.smokeTests.GenerateTokenPositiveTest"/>
+            <class name="test.api.smokeTests.LoginUserTest"/>
+        </classes>
+    </test>
+
+    <!-- Integration Tests -->
+    <test name="IntegrationTests">
+        <classes>
+            <class name="test.api.integrationTests.GetBooksTest"/>
+        </classes>
+    </test>
+
+</suite>
