@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import test.api.ApiSender;
 import test.api.BaseApiTest;
+import test.security.PasswordManager;
 
 
 public class AuthorizedPositiveUserTest extends BaseApiTest {
@@ -13,7 +14,7 @@ public class AuthorizedPositiveUserTest extends BaseApiTest {
     public void authorizedPositiveTest() {
         LoginRequest request = LoginRequest.builder()
                 .userName(config.username())
-                .password(config.password())
+                .password(PasswordManager.getDecryptedPassword(config))
                 .build();
 
         Response response = ApiSender.authorized(request);

@@ -7,7 +7,7 @@ import org.api.url.Endpoints;
 import static io.restassured.RestAssured.given;
 
 public class ApiSender {
-    @Step("Создать LoginRequest с username: {username}")
+    @Step("Create LoginRequest")
     public static Response login(Object body) {
         return given()
                 .contentType("application/json")
@@ -18,7 +18,7 @@ public class ApiSender {
                 .extract()
                 .response();
     }
-    @Step("Отправить запрос на авторизацию пользователя")
+    @Step("User authorization request")
     public static Response authorized(Object body){
         return given()
                 .contentType("application/json")
@@ -29,7 +29,7 @@ public class ApiSender {
                 .extract()
                 .response();
     }
-    @Step("Отправить запрос на генерацию токена")
+    @Step("Token generation request")
     public static Response generateToken(Object body) {
         return given()
                 .contentType("application/json")
@@ -40,7 +40,7 @@ public class ApiSender {
                 .extract()
                 .response();
     }
-    @Step("Получить список книг")
+    @Step("Get a list of books")
     public static Response getBooks() {
         return given()
                 .when()
@@ -49,7 +49,7 @@ public class ApiSender {
                 .extract()
                 .response();
     }
-    @Step("Получить информацию о пользователе {username}")
+    @Step("Get user information")
     public static Response getUser(String username, String token) {
         return given()
                 .header("Authorization", "Bearer " + token)

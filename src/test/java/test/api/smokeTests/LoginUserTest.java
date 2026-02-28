@@ -7,13 +7,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import test.api.ApiSender;
 import test.api.BaseApiTest;
+import test.security.PasswordManager;
 
 public class LoginUserTest extends BaseApiTest {
     @Test
     public void loginTest(){
         LoginRequest request = LoginRequest.builder()
                 .userName(config.username())
-                .password(config.password())
+                .password(PasswordManager.getDecryptedPassword(config))
                 .build();
         Response response = ApiSender.login(request);
         Assert.assertEquals(response.statusCode(),200);
