@@ -18,9 +18,10 @@ public class AuthorizedPositiveUserTest extends BaseApiTest {
                 .build();
 
         Response response = ApiSender.authorized(request);
-        Assert.assertEquals(response.statusCode(), 200);
+        Assert.assertEquals(response.statusCode(), 200,"Expected status code " +
+                "200 for successful authorization, but received:");
         Boolean isAuthorized = response.as(Boolean.class);
-        Assert.assertTrue(isAuthorized);
-        response.prettyPrint();
+        Assert.assertTrue(isAuthorized,"The user should have been successfully " +
+                "logged in, but the API returned false.");
     }
 }

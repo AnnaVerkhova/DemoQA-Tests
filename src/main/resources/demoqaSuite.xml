@@ -3,20 +3,16 @@
 
     <!--Smoke Tests -->
     <test name="SmokeTests">
-        <classes>
-            <class name="test.api.smokeTests.AuthorizedNegativeUserTest"/>
-            <class name="test.api.smokeTests.AuthorizedPositiveUserTest"/>
-            <class name="test.api.smokeTests.GenerateTokenNegativeTest"/>
-            <class name="test.api.smokeTests.GenerateTokenPositiveTest"/>
-            <class name="test.api.smokeTests.LoginUserTest"/>
-        </classes>
+        <packages>
+            <package name="test.api.smokeTests"/>
+        </packages>
     </test>
 
     <!-- Integration Tests -->
     <test name="IntegrationTests">
-        <classes>
-            <class name="test.api.integrationTests.GetBooksTest"/>
-        </classes>
+        <packages>
+            <package name="test.api.integrationTests"/>
+        </packages>
     </test>
 
 </suite>

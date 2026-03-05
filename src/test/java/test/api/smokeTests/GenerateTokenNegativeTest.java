@@ -16,14 +16,13 @@ public class GenerateTokenNegativeTest extends BaseApiTest {
             .password(config.invalidPassword())
             .build();
         Response response = ApiSender.generateToken(request);
-        response.prettyPrint();
 
-        Assert.assertEquals(response.statusCode(), 200);
+        Assert.assertEquals(response.statusCode(), 200,"Expected status code " +
+                "200 for successful authorization, but received:");
         GenerateTokenResponse generateTokenResponse = response.as(GenerateTokenResponse.class);
-        Assert.assertNull(generateTokenResponse.getToken());
-        Assert.assertEquals(generateTokenResponse.getStatus(),"Failed");
-
-        System.out.println("Token is " + generateTokenResponse.getToken());
-        System.out.println("Status is " +generateTokenResponse.getStatus());
+        Assert.assertNull(generateTokenResponse.getToken(),"The token should not be generated if the " +
+                "password is incorrect, but was received:");
+        Assert.assertEquals(generateTokenResponse.getStatus(),"Failed","Expected 'Failed' " +
+                "status with invalid data, but received:");
     }
 }

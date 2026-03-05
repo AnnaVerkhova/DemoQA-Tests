@@ -18,4 +18,13 @@ public interface TestConfig extends Config {
 
     @Key("invalidPassword")
     String invalidPassword();
+
+    @Key("urlDB")
+    String urlDB();
+
+    @Key("userDB")
+    String userDB();
+
+    @Key("passwordDB")
+    String passwordDB();
 }

@@ -14,13 +14,11 @@ public class AuthorizedNegativeUserTest extends BaseApiTest {
                 .userName(config.username())
                 .password(config.invalidPassword())
                 .build();
+
         Response response = ApiSender.authorized(request);
-        response.prettyPrint();
-        if (response.statusCode() == 200) {
-            Boolean isAuthorized = response.as(Boolean.class);
-            Assert.assertFalse(isAuthorized);
-        } else {
-            Assert.assertEquals(response.statusCode(), 404);
-        }
+        Assert.assertEquals(
+                response.statusCode(),404,
+                "In case of invalid authorization data, the status code 404 " +
+                        "was expected, but the following was received: " + response.statusCode());
     }
 }

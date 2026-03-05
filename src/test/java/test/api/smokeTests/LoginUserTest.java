@@ -17,10 +17,11 @@ public class LoginUserTest extends BaseApiTest {
                 .password(PasswordManager.getDecryptedPassword(config))
                 .build();
         Response response = ApiSender.login(request);
-        Assert.assertEquals(response.statusCode(),200);
+        Assert.assertEquals(response.statusCode(),200,"Expected status code 200" +
+                " for successful login, but received: ");
         LoginResponse loginResponse = response.as(LoginResponse.class);
-        Assert.assertEquals(loginResponse.getUsername(),config.username());
-        Assert.assertNotNull(loginResponse.getUserId());
-        response.prettyPrint();
+        Assert.assertEquals(loginResponse.getUsername(),config.username(),"The username in the" +
+                " response does not match the expected one. Expected: ");
+        Assert.assertNotNull(loginResponse.getUserId(),"UserId must not be null after successful login.");
     }
 }
