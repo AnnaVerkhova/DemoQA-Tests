@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ApiTestSuite">
+
+    <!--Smoke Tests -->
+    <test name="SmokeTests">
+        <packages>
+            <package name="test.api.smokeTests"/>
+        </packages>
+    </test>
+
+    <!-- Integration Tests -->
+    <test name="IntegrationTests">
+        <packages>
+            <package name="test.api.integrationTests"/>
+        </packages>
+    </test>
+
+</suite>
