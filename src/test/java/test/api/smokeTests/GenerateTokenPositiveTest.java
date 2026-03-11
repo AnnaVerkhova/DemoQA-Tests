@@ -3,6 +3,7 @@ package test.api.smokeTests;
 import io.restassured.response.Response;
 import org.api.data.account.GenerateTokenResponse;
 import org.api.data.account.LoginRequest;
+import org.config.ConfigManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import test.api.ApiSender;
@@ -13,8 +14,8 @@ public class GenerateTokenPositiveTest extends BaseApiTest {
     @Test
     public void generateTokenPositiveTest() {
         LoginRequest request = LoginRequest.builder()
-                .userName(config.username())
-                .password(PasswordManager.getDecryptedPassword(config))
+                .userName(ConfigManager.getConfig().username())
+                .password(PasswordManager.getDecryptedPassword(ConfigManager.getConfig()))
                 .build();
         Response response = ApiSender.generateToken(request);
         response.prettyPrint();
