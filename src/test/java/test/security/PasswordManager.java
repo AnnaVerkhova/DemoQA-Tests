@@ -1,7 +1,7 @@
 package test.security;
 
 import io.qameta.allure.Step;
-import test.TestConfig;
+import org.config.TestConfig;
 
 public class PasswordManager {
 

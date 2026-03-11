@@ -2,7 +2,7 @@ package test.database;
 
 import io.qameta.allure.Step;
 import org.aeonbits.owner.ConfigFactory;
-import test.TestConfig;
+import org.config.TestConfig;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

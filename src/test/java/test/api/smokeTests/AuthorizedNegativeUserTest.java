@@ -2,6 +2,7 @@ package test.api.smokeTests;
 
 import io.restassured.response.Response;
 import org.api.data.account.LoginRequest;
+import org.config.ConfigManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import test.api.ApiSender;
@@ -11,8 +12,8 @@ public class AuthorizedNegativeUserTest extends BaseApiTest {
     @Test
     public void AuthorizedNegativeTest() {
         LoginRequest request = LoginRequest.builder()
-                .userName(config.username())
-                .password(config.invalidPassword())
+                .userName(ConfigManager.getConfig().username())
+                .password(ConfigManager.getConfig().invalidPassword())
                 .build();
 
         Response response = ApiSender.authorized(request);
