@@ -2,7 +2,9 @@ package test.database;
 
 import io.qameta.allure.Step;
 import org.aeonbits.owner.ConfigFactory;
+import org.config.ConfigManager;
 import org.config.TestConfig;
+import test.security.PasswordManager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +20,7 @@ public class DatabaseConnection {
         return DriverManager.getConnection(
                 config.urlDB(),
                 config.userDB(),
-                config.passwordDB()
+                PasswordManager.getDecryptedPasswordDB(ConfigManager.getConfig())
         );
     }
 }

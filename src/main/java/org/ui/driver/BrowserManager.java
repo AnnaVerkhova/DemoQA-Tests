@@ -16,7 +16,7 @@ public class BrowserManager {
         if (ConfigManager.getConfig().headless()) {
             options.addArguments("--headless=new");
         }
-        options.addArguments("--start-maximized");
+        options.addArguments("--window-size=1920,1080");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(
                 Duration.ofSeconds(ConfigManager.getConfig().implicitTimeout())

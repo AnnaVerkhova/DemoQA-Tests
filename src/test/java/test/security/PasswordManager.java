@@ -10,4 +10,10 @@ public class PasswordManager {
 
         return CipherUtil.decrypt(config.password());
     }
+
+    @Step("Get decrypted passwordDB from config")
+    public static String getDecryptedPasswordDB(TestConfig config) {
+
+        return CipherUtil.decrypt(config.passwordDB());
+    }
 }
