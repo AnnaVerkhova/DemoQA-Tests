@@ -17,7 +17,7 @@ public class GetClassicBooks {
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement stmt = connection.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
-            Assert.assertTrue(rs.next(), "Таблица classic_books пуста или данные не найдены");
+            Assert.assertTrue(rs.next(), "The classic_books table is empty or no data found");
             books.add(new ClassicBook(
                     rs.getString("username"),
                     rs.getString("book_title")
@@ -29,9 +29,9 @@ public class GetClassicBooks {
                 ));
             }
         } catch (SQLException e) {
-            Assert.fail("Ошибка при получении данных из таблицы classic_books: " + e.getMessage());
+            Assert.fail("Error when retrieving data from the classic_books table: " + e.getMessage());
         }
-        Assert.assertFalse(books.isEmpty(), "Список книг пуст после выборки из таблицы classic_books");
+        Assert.assertFalse(books.isEmpty(), "The list of books is empty after selecting from the classic_books table\"");
 
         return books;
     }

@@ -1,7 +1,7 @@
 package test.security;
 
 import io.qameta.allure.Step;
-import test.TestConfig;
+import org.config.TestConfig;
 
 public class PasswordManager {
 
@@ -9,5 +9,11 @@ public class PasswordManager {
     public static String getDecryptedPassword(TestConfig config) {
 
         return CipherUtil.decrypt(config.password());
+    }
+
+    @Step("Get decrypted passwordDB from config")
+    public static String getDecryptedPasswordDB(TestConfig config) {
+
+        return CipherUtil.decrypt(config.passwordDB());
     }
 }

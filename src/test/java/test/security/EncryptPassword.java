@@ -6,4 +6,10 @@ public class EncryptPassword {
         String encrypted = CipherUtil.encrypt(password);
         System.out.println(encrypted);
     }
+
+    public static void encryptPasswordDB(String[] args) {
+        String passwordDB = "123qwe456";
+        String encryptedBD = CipherUtil.encrypt(passwordDB);
+        System.out.println(encryptedBD);
+    }
 }

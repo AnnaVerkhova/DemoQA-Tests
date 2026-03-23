@@ -1,4 +1,4 @@
-package test;
+package org.config;
 
 import org.aeonbits.owner.Config;
 
@@ -27,4 +27,25 @@ public interface TestConfig extends Config {
 
     @Key("passwordDB")
     String passwordDB();
+
+    @Key("browser")
+    String browser();
+
+    @Key("headless")
+    boolean headless();
+
+    @Key("implicitTimeout")
+    int implicitTimeout();
+
+    @Key("explicitTimeout")
+    int explicitTimeout();
+
+    @Key("urlLogin")
+    String urlLogin();
+
+    @Key("urlProfile")
+    String urlProfile();
+
+    @Key("urlBooks")
+    String urlBooks();
 }
