@@ -23,7 +23,6 @@ allure-report/
 
 # Environment / secrets
 *.env
-config.properties
 
 # Temporary files
 *.tmp
