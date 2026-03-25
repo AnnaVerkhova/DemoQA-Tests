@@ -37,7 +37,6 @@ DemoQA-Tests — учебный тестовый проект по автома�
 ## 📊 Allure Report
 
 <p align="center">
-  <img src="docs/images/allure-report.png" width="800"/>
-<img src="docs/images/Allure2.png" width="800"/>
+<img src="docs/images/Итоговый.png" width="800"/>
 
 </p>
